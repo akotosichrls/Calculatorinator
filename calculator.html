@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Calculatorinator</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="jabascript.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="calculator">
+        <form>
+          <!-- display of the calculator -->
+          <div class="display">
+            <input
+              type="text"
+              name="display"
+              id="display"
+              oninput="this.value = this.value.replace(/[^0-9+\-*/.%÷x]/g, '')"
+              onclick="this.value = ''"
+            />
+          </div>
+          <!-- first row for memory buttons -->
+          <div class="memory-functions">
+            <input type="button" value="MC" onclick="memoryClear()" />
+            <input type="button" value="MR" onclick="memoryRecall()" />
+            <input type="button" value="M+" onclick="memoryAdd()" />
+          </div>
+          <!-- second row for memory buttons -->
+          <div class="memory-functions">
+            <input type="button" value="M-" onclick="memorySubtract()" />
+            <input type="button" value="MS" onclick="memorySave()" />
+            <input type="button" value="Mv" onclick="memoryShow()" />
+          </div>
+          <!-- third row for memory buttons -->
+          <div class="memory-functions">
+            <input type="button" value="BIN" />
+            <input type="button" value="OCT" />
+            <input type="button" value="HEX" />
+          </div>
+          <!-- first row -->
+          <div>
+            <!-- clear all value in display -->
+            <input
+              type="button"
+              value="C"
+              onclick="display.value = ''"
+              class="operator"
+            />
+            <!-- clear value 1 by 1 -->
+            <input
+              type="button"
+              value="CE"
+              onclick="display.value = display.value.slice(0, -1)"
+              class="operator"
+            />
+            <input type="button" value="%" class="operator" />
+            <input type="button" value="÷" class="operator" />
+          </div>
+          <!-- second row -->
+          <div>
+            <input type="button" value="7" />
+            <input type="button" value="8" />
+            <input type="button" value="9" />
+            <input type="button" value="x" class="operator" />
+          </div>
+          <!-- third row -->
+          <div>
+            <input type="button" value="4" />
+            <input type="button" value="5" />
+            <input type="button" value="6" />
+            <input type="button" value="-" class="operator" />
+          </div>
+          <!-- fourth row -->
+          <div>
+            <input type="button" value="1" />
+            <input type="button" value="2" />
+            <input type="button" value="3" />
+            <input type="button" value="+" class="operator" />
+          </div>
+          <!-- fifth row -->
+          <div>
+            <input type="button" value="00" />
+            <input type="button" value="0" />
+            <input type="button" value="." />
+            <input
+              type="button"
+              value="="
+              onclick="calculateResult()"
+              class="equal operator"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
