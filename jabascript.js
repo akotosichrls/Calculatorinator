@@ -57,7 +57,7 @@ let memory = 0;
 // Memory Clear: clears the stored memory value
 function memoryClear() {
   memory = 0;
-  alert("Memory cleared.");
+  //alert("Memory cleared.");
 }
 
 // Memory Recall: displays stored memory value
@@ -70,9 +70,9 @@ function memoryAdd() {
   const displayValue = parseFloat(document.getElementById("display").value); // Parse display value as a number
   if (!isNaN(displayValue)) {
     memory += displayValue;
-    alert(`Added to memory: ${displayValue}`);
+    //alert(`Added to memory: ${displayValue}`);
   } else {
-    alert("Invalid input. Please enter a valid number.");
+    //alert("Invalid input. Please enter a valid number.");
   }
 }
 
@@ -81,9 +81,9 @@ function memorySubtract() {
   const displayValue = parseFloat(document.getElementById("display").value);
   if (!isNaN(displayValue)) {
     memory -= displayValue;
-    alert(`Subtracted from memory: ${displayValue}`);
+    //alert(`Subtracted from memory: ${displayValue}`);
   } else {
-    alert("Invalid input. Please enter a valid number.");
+    //alert("Invalid input. Please enter a valid number.");
   }
 }
 
@@ -92,15 +92,17 @@ function memorySave() {
   const displayValue = parseFloat(document.getElementById("display").value);
   if (!isNaN(displayValue)) {
     memory = displayValue;
-    alert(`Memory saved: ${displayValue}`);
+    //alert(`Memory saved: ${displayValue}`);
   } else {
-    alert("Invalid input. Please enter a valid number.");
+    //alert("Invalid input. Please enter a valid number.");
   }
 }
 
 // Memory View: shows current stored memory value with alert box
 function memoryShow() {
-  alert(`Memory value: ${memory}`);
+  const display = document.getElementById("display"); // Get the calculator display element
+  display.value = memory; // Set the memory value to the display
+  //alert(`Memory value: ${memory}`);
 }
 
 // convert current display value to a specified base (BIN, OCT, HEX)
@@ -109,7 +111,7 @@ function convertToBase(base) {
   const displayValue = parseInt(display.value, 10); // parse input as an integer (base 10)
 
   if (isNaN(displayValue)) {
-    alert("Invalid input. Please enter a valid integer.");
+    //alert("Invalid input. Please enter a valid integer.");
     return;
   }
 
